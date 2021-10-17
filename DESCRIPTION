@@ -1,0 +1,30 @@
+Package: rticle.pkgr
+Title: Allows to write an article/paper with an R package structure
+Version: 0.1.0
+Authors@R:
+    c(person(given = "Daniel E.",
+           family = "de la Rosa",
+           role = c("aut", "cre"),
+           email = "drdsdaniel@gmail.com"),
+    person(given = "Adatar",
+           role = "cph"))
+Description: With the use of this package you will be able to write an article/paper
+    with the structure and methodology of an R package development. Being able to 
+    write and keep updated the functions, data and documents in a structured way. 
+    In addition,it allows you to easily share the entire project or even publish it 
+    using pkgdown.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: 
+    usethis,
+    readr,
+    Dmisc,
+    renv,
+    stringr
+Remotes:
+    drdsdaniel/Dmisc
+Suggests: 
+    rmarkdown
