@@ -29,7 +29,7 @@ Theoretically any format that follows the conventions of rticles can be used.}
 \link{NULL}
 }
 \description{
-Create an article package structure
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
 \examples{
 \dontrun{

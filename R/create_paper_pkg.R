@@ -1,5 +1,7 @@
 #' Create an article package structure
 #'
+#'   `r lifecycle::badge('experimental')`
+#'
 #' @param path where project will be located
 #' @param template base document to use. You can go with the default. Or set any
 #'   of the \href{https://pkgs.rstudio.com/rticles/}{rticles} formats.
