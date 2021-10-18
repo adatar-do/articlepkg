@@ -1,6 +1,6 @@
 Package: rticle.pkgr
 Title: Allows to write an article/paper with an R package structure
-Version: 0.2.3
+Version: 0.2.4
 Authors@R:
     c(person(given = "Daniel E.",
            family = "de la Rosa",
@@ -21,12 +21,8 @@ RoxygenNote: 7.1.2
 Imports: 
     usethis,
     readr,
-    Dmisc,
-    renv,
     stringr,
     lifecycle
-Remotes:
-    drdsdaniel/Dmisc
 Suggests: 
     knitr,
     covr,
