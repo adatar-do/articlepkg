@@ -3,7 +3,7 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   ptuml: ptuml.html
-last_built: 2021-10-18T16:30Z
+last_built: 2021-10-18T16:54Z
 urls:
   reference: https://adatar-do.github.io/rticle.pkgr/reference
   article: https://adatar-do.github.io/rticle.pkgr/articles
