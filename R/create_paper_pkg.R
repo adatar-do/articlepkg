@@ -6,8 +6,6 @@
 #' @param template base document to use. You can go with the default. Or set any
 #'   of the \href{https://pkgs.rstudio.com/rticles/}{rticles} formats.
 #'   Theoretically any format that follows the conventions of rticles can be used.
-#' @param use_renv controls whether \href{https://rstudio.github.io/renv/index.html}{renv} is used in development
-#' @param use_renv_args aditional arguments passed to \code{renv::\link[renv:init]{init}}
 #' @param ... other arguments passed to \code{usethis::\link[usethis:create_package]{create_package}}
 #'
 #' @return [NULL]
@@ -19,13 +17,13 @@
 #' }
 create_paper_pkg <- function(path,
                              template = Rmdx::rmdx_paper,
-                             use_renv = TRUE,
-                             use_renv_args = list(),
                              ...
                             ){
   pkg <- as.character(substitute(template))[[2]]
+  print(pkg)
 
   fn <- as.character(substitute(template))[[3]]
+  print(fn)
 
   path <- suppressWarnings(normalizePath(path))
 
@@ -40,13 +38,17 @@ create_paper_pkg <- function(path,
 
   usethis::use_vignette(name = name)
 
-  pkg_resource <-  function(...) {system.file(..., package = pkg)}
+  pkg_resource <-  function(pkg0 = pkg, ...) {system.file(..., package = pkg0)}
+
+  print(pkg_resource())
 
   templates <- list.dirs(
     paste0(pkg_resource(), "/rmarkdown/templates"),
     recursive = FALSE,
     full.names = FALSE
   )
+
+  print(templates)
 
   temp_dir <- templates[stringr::str_detect(fn, templates)]
 
@@ -75,7 +77,4 @@ create_paper_pkg <- function(path,
         "\\%\\\\VignetteEngine{knitr::rmarkdown}\n  ",
         "\\%\\\\VignetteEncoding{UTF-8}\n---"))
   readr::write_file(rmd, file = paste0(path, "/", "vignettes/", name, ".Rmd"))
-  if(use_renv){
-    do.call(Dmisc::use_renv, c(list(project = path), use_renv_args))
-  }
 }

@@ -4,13 +4,7 @@
 \alias{create_paper_pkg}
 \title{Create an article package structure}
 \usage{
-create_paper_pkg(
-  path,
-  template = Rmdx::rmdx_paper,
-  use_renv = TRUE,
-  use_renv_args = list(),
-  ...
-)
+create_paper_pkg(path, template = Rmdx::rmdx_paper, ...)
 }
 \arguments{
 \item{path}{where project will be located}
@@ -18,10 +12,6 @@ create_paper_pkg(
 \item{template}{base document to use. You can go with the default. Or set any
 of the \href{https://pkgs.rstudio.com/rticles/}{rticles} formats.
 Theoretically any format that follows the conventions of rticles can be used.}
-
-\item{use_renv}{controls whether \href{https://rstudio.github.io/renv/index.html}{renv} is used in development}
-
-\item{use_renv_args}{aditional arguments passed to \code{renv::\link[renv:init]{init}}}
 
 \item{...}{other arguments passed to \code{usethis::\link[usethis:create_package]{create_package}}}
 }
