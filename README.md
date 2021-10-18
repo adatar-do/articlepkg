@@ -20,5 +20,5 @@ status](https://www.r-pkg.org/badges/version/rticle.pkgr)](https://CRAN.R-projec
 With the use of this package you will be able to write an article/paper
 with the structure and methodology of an R package development. Being
 able to write and keep updated the functions, data and documents in a
-structured way. In addition,it allows you to easily share the entire
-project or even publish it using pkgdown.
+structured way. In addition, it allows you to easily share the entire
+project or even publish it using [pkgdown](https://pkgdown.r-lib.org/).
