@@ -48,31 +48,33 @@ create_paper_pkg <- function(path,
     full.names = FALSE
   )
 
-  print(templates)
-
   temp_dir <- templates[stringr::str_detect(fn, templates)]
 
   files_list <- list.files(
-    pkg_resource(paste0("rmarkdown/templates/", temp_dir, "/skeleton")),
+    paste0(pkg_resource(), "/rmarkdown/templates/", temp_dir, "/skeleton"),
     pattern = ".*[^Rmd]$"
   )
 
   for (fil in files_list) {
     file.copy(
-      pkg_resource(paste0("rmarkdown/templates/", temp_dir, "/skeleton/", fil)),
+      paste0(pkg_resource(), "/rmarkdown/templates/", temp_dir, "/skeleton/", fil),
       paste0(path, "/", "vignettes/", fil)
     )
   }
 
-  rmd <-  pkg_resource("rmarkdown/templates/", temp_dir, "/skeleton/skeleton.Rmd")
+  rmd <-  paste0(pkg_resource(), "/rmarkdown/templates/", temp_dir, "/skeleton/skeleton.Rmd")
   rmd <- readr::read_file(rmd)
   rmd <- stringr::str_replace_all(rmd, "\r\n", "\n")
   rmd <- stringr::str_replace(rmd,
                               "output: ",
                               "output:\n  rmarkdown::html_vignette: default\n  ")
+  inlines <- stringr::str_split(rmd, "\n")[[1]]
+  output_opts <- trimws(
+    inlines[match(1, stringr::str_detect(inlines, "output:"))]
+    ) == "output:"
   rmd <- stringr::str_replace(rmd,
                               "\n---",
-                              paste0(": default\n",
+                              paste0(ifelse(output_opts, "\n", ": default\n"),
         "vignette: >\n  \\%\\\\VignetteIndexEntry{", name, "}\n  ",
         "\\%\\\\VignetteEngine{knitr::rmarkdown}\n  ",
         "\\%\\\\VignetteEncoding{UTF-8}\n---"))
