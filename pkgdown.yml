@@ -1,9 +1,8 @@
 pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
-articles:
-  ptuml: ptuml.html
-last_built: 2021-10-18T16:54Z
+articles: {}
+last_built: 2021-10-19T01:25Z
 urls:
   reference: https://adatar-do.github.io/rticle.pkgr/reference
   article: https://adatar-do.github.io/rticle.pkgr/articles
