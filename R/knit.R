@@ -17,8 +17,8 @@
 knit <- function(input, ...) {
   rmarkdown::render(
     input,
-    output_format = "all",
-    output_dir = dirname(dirname(input)),
+    output_format = ifelse(interactive(), "all", NULL),
+    output_dir = ifelse(interactive(), dirname(dirname(input)), dirname(input)),
     envir = globalenv()
   )
 }
