@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • articlepkg</title>
+<title>Create an article package structure — create_article_pkg • articlepkg</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Create an article package structure — create_article_pkg" />
+<meta property="og:description" content="" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -100,48 +101,52 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Create an article package structure</h1>
+    
+    <div class="hidden name"><code>create_article_pkg.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p><a href='https://lifecycle.r-lib.org/articles/stages.html#experimental'><img src='figures/lifecycle-experimental.svg' alt='[Experimental]' /></a></p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>create_article_pkg</span><span class='op'>(</span><span class='va'>path</span>, template <span class='op'>=</span> <span class='fu'>Rmdx</span><span class='fu'>::</span><span class='va'>rmdx_paper</span>, use_home <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="create_article_pkg.html">create_article_pkg()</a></code> </p>
-        </td>
-        <td><p>Create an article package structure</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="knit.html">knit()</a></code> </p>
-        </td>
-        <td><p>Custom knit function for articlepkg</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>path</th>
+      <td><p>where project will be located</p></td>
+    </tr>
+    <tr>
+      <th>template</th>
+      <td><p>base document to use. You can go with the default. Or set any
+of the <a href='https://pkgs.rstudio.com/rticles/'>rticles</a> formats.
+Theoretically any format that follows the conventions of rticles can be used.</p></td>
+    </tr>
+    <tr>
+      <th>use_home</th>
+      <td><p>indicates if home page is used to display the article online version</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>other arguments passed to <code>usethis::<a href='https://usethis.r-lib.org/reference/create_package.html'>create_package</a></code></p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p><a href='https://rdrr.io/r/base/NULL.html'>NULL</a></p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'><span class='fu'>create_article_pkg</span><span class='op'>(</span><span class='st'>"~/foofactors"</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
