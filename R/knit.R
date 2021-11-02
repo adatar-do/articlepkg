@@ -1,5 +1,5 @@
 
-#' Custom knit function for rticle
+#' Custom knit function for articlepkg
 #'
 #' @param input The input file to be rendered
 #' @param ... other arguments passed to \code{rmarkdown::\link[rmarkdown:render]{render}}
@@ -11,14 +11,14 @@
 #' \dontrun{
 #' ---
 #' ...
-#' knit: rticle.pkgr::knit
+#' knit: articlepkg::knit
 #' ---
 #' }
 knit <- function(input, ...) {
   rmarkdown::render(
     input,
-    output_format = ifelse(interactive(), "all", NULL),
-    output_dir = ifelse(interactive(), dirname(dirname(input)), dirname(input)),
+    output_format = "all",
+    output_dir = dirname(dirname(input)),
     envir = globalenv()
   )
 }

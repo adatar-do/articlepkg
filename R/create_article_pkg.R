@@ -13,34 +13,25 @@
 #'
 #' @examples
 #' \dontrun{
-#'   create_paper_pkg("~/foofactors")
+#'   create_article_pkg("~/foofactors")
 #' }
-create_paper_pkg <- function(path,
+create_article_pkg <- function(path,
                              template = Rmdx::rmdx_paper,
                              ...
                             ){
   pkg <- as.character(substitute(template))[[2]]
-  print(pkg)
 
   fn <- as.character(substitute(template))[[3]]
-  print(fn)
 
   path <- suppressWarnings(normalizePath(path))
-
-  pp <- stringr::str_split(path, "/")[[1]]
-  pp <- stringr::str_split(path, "\\\\")[[1]]
-
-  name <- pp[length(pp)]
 
   usethis::create_package(path = path, open = FALSE, ...)
 
   setwd(path)
 
-  usethis::use_vignette(name = name)
+  dir.create(paste0(path, "/article"))
 
   pkg_resource <-  function(pkg0 = pkg, ...) {system.file(..., package = pkg0)}
-
-  print(pkg_resource())
 
   templates <- list.dirs(
     paste0(pkg_resource(), "/rmarkdown/templates"),
@@ -58,16 +49,13 @@ create_paper_pkg <- function(path,
   for (fil in files_list) {
     file.copy(
       paste0(pkg_resource(), "/rmarkdown/templates/", temp_dir, "/skeleton/", fil),
-      paste0(path, "/", "vignettes/", fil)
+      paste0(path, "/", "article/", fil)
     )
   }
 
   rmd <-  paste0(pkg_resource(), "/rmarkdown/templates/", temp_dir, "/skeleton/skeleton.Rmd")
   rmd <- readr::read_file(rmd)
   rmd <- stringr::str_replace_all(rmd, "\r\n", "\n")
-  rmd <- stringr::str_replace(rmd,
-                              "output: ",
-                              "output:\n  rmarkdown::html_vignette: default\n  ")
   inlines <- stringr::str_split(rmd, "\n")[[1]]
   output_opts <- trimws(
     inlines[match(1, stringr::str_detect(inlines, "output:"))]
@@ -75,8 +63,10 @@ create_paper_pkg <- function(path,
   rmd <- stringr::str_replace(rmd,
                               "\n---",
                               paste0(ifelse(output_opts, "\n", ": default\n"),
-        "vignette: >\n  \\%\\\\VignetteIndexEntry{", name, "}\n  ",
-        "\\%\\\\VignetteEngine{knitr::rmarkdown}\n  ",
-        "\\%\\\\VignetteEncoding{UTF-8}\n---"))
-  readr::write_file(rmd, file = paste0(path, "/", "vignettes/", name, ".Rmd"))
+        "knit: articlepkg::knit",
+        "\n---"))
+  rmd <- stringr::str_replace(rmd,
+                              "output: ",
+                              "output:\n  rmarkdown::github_document: default\n  ")
+  readr::write_file(rmd, file = paste0(path, "/article/index.Rmd"))
 }

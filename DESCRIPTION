@@ -1,6 +1,6 @@
-Package: rticle.pkgr
+Package: articlepkg
 Title: Allows to write an article/paper with an R package structure
-Version: 0.6.1
+Version: 0.7.0
 Authors@R:
     c(person(given = "Daniel E.",
            family = "de la Rosa",
@@ -28,5 +28,5 @@ Suggests:
     knitr,
     covr,
     rmarkdown
-URL: https://adatar-do.github.io/rticle.pkgr
+URL: https://adatar-do.github.io/articlepkg
 VignetteBuilder: knitr

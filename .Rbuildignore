@@ -1,6 +1,6 @@
 ^renv$
 ^renv\.lock$
-^rticle\.pkgr\.Rproj$
+^articlepkg\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^README\.Rmd$

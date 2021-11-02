@@ -21,7 +21,7 @@ Custom knit function for rticle
 \dontrun{
 ---
 ...
-knit: rticle.pkgr::knit
+knit: articlepkg::knit
 ---
 }
 }

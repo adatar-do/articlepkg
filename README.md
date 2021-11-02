@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rticle.pkgr
+# articlepkg
 
 <!-- badges: start -->
 
@@ -10,11 +10,11 @@ has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check](https://github.com/adatar-do/rticle.pkgr/workflows/R-CMD-check/badge.svg)](https://github.com/adatar-do/rticle.pkgr/actions)
+[![R-CMD-check](https://github.com/adatar-do/articlepkg/workflows/R-CMD-check/badge.svg)](https://github.com/adatar-do/articlepkg/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/adatar-do/rticle.pkgr/branch/main/graph/badge.svg)](https://codecov.io/gh/adatar-do/rticle.pkgr?branch=main)
+coverage](https://codecov.io/gh/adatar-do/articlepkg/branch/main/graph/badge.svg)](https://codecov.io/gh/adatar-do/articlepkg?branch=main)
 [![CRAN
-status](https://www.r-pkg.org/badges/version/rticle.pkgr)](https://CRAN.R-project.org/package=rticle.pkgr)
+status](https://www.r-pkg.org/badges/version/articlepkg)](https://CRAN.R-project.org/package=articlepkg)
 <!-- badges: end -->
 
 With the use of this package you will be able to write an article/paper
