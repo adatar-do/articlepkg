@@ -1,6 +1,6 @@
 Package: articlepkg
 Title: Allows to write an article/paper with an R package structure
-Version: 0.7.0
+Version: 0.8.0
 Authors@R:
     c(person(given = "Daniel E.",
            family = "de la Rosa",

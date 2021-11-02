@@ -4,7 +4,7 @@
 \alias{create_article_pkg}
 \title{Create an article package structure}
 \usage{
-create_article_pkg(path, template = Rmdx::rmdx_paper, ...)
+create_article_pkg(path, template = Rmdx::rmdx_paper, use_home = TRUE, ...)
 }
 \arguments{
 \item{path}{where project will be located}
@@ -12,6 +12,8 @@ create_article_pkg(path, template = Rmdx::rmdx_paper, ...)
 \item{template}{base document to use. You can go with the default. Or set any
 of the \href{https://pkgs.rstudio.com/rticles/}{rticles} formats.
 Theoretically any format that follows the conventions of rticles can be used.}
+
+\item{use_home}{indicates if home page is used to display the article online version}
 
 \item{...}{other arguments passed to \code{usethis::\link[usethis:create_package]{create_package}}}
 }
@@ -23,6 +25,6 @@ Theoretically any format that follows the conventions of rticles can be used.}
 }
 \examples{
 \dontrun{
-  create_article_pkg("~/foofactors")
+create_article_pkg("~/foofactors")
 }
 }

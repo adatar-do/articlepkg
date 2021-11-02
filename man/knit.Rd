@@ -2,7 +2,7 @@
 % Please edit documentation in R/knit.R
 \name{knit}
 \alias{knit}
-\title{Custom knit function for rticle}
+\title{Custom knit function for articlepkg}
 \usage{
 knit(input, ...)
 }
@@ -15,7 +15,7 @@ knit(input, ...)
 the compiled document
 }
 \description{
-Custom knit function for rticle
+Custom knit function for articlepkg
 }
 \examples{
 \dontrun{
