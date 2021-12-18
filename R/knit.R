@@ -1,5 +1,5 @@
-
 #' Custom knit function for articlepkg
+#' `r lifecycle::badge('experimental')`
 #'
 #' @param input The input file to be rendered
 #' @param ... other arguments passed to \code{rmarkdown::\link[rmarkdown:render]{render}}

@@ -2,7 +2,8 @@
 % Please edit documentation in R/knit.R
 \name{knit}
 \alias{knit}
-\title{Custom knit function for articlepkg}
+\title{Custom knit function for articlepkg
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}}
 \usage{
 knit(input, ...)
 }
@@ -16,6 +17,7 @@ the compiled document
 }
 \description{
 Custom knit function for articlepkg
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
 \examples{
 \dontrun{

@@ -2,7 +2,8 @@
 % Please edit documentation in R/create_article_pkg.R
 \name{create_article_pkg}
 \alias{create_article_pkg}
-\title{Create an article package structure}
+\title{Create an article package structure
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}}
 \usage{
 create_article_pkg(path, template = Rmdx::rmdx_paper, use_home = TRUE, ...)
 }
@@ -21,6 +22,7 @@ Theoretically any format that follows the conventions of rticles can be used.}
 \link{NULL}
 }
 \description{
+Create an article package structure
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
 \examples{
